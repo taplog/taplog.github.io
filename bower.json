@@ -1,0 +1,37 @@
+{
+  "name": "taplog.github.io",
+  "version": "0.0.0",
+  "homepage": "http://welcome.taplog.info",
+  "authors": [
+    "R.G. Ehmer <r.george.e.b@gmail.com>"
+  ],
+  "description": "welcome site",
+  "main": "index.html",
+  "keywords": [
+    "taplog",
+    "android",
+    "quantified",
+    "self"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-elements": "PolymerElements/iron-elements#1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#1.0.1",
+    "neon-elements": "PolymerElements/neon-elements#1.0.0",
+    "page": "visionmedia/page.js#~1.6.3"
+  },
+  "devDependencies": {
+    "web-component-tester": "*",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
+  }
+}
