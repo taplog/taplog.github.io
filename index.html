@@ -15,8 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Polymer Starter Kit" />
-  <title>Polymer Starter Kit</title>
+  <meta name="generator" content="Tap Log Welcome" />
+  <title>Tap Log Welcome</title>
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
@@ -49,7 +49,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
-
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
@@ -59,134 +58,140 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel">
-      <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
+  <!-- Drawer Toolbar -->
+  <paper-toolbar id="drawerToolbar">
+    <span class="title" id="mainTitle">Tap Log</span>
+    <paper-button raised center id="actionButton">
+      free to use
+    </paper-button>
+  </paper-toolbar>
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="paper-font-title">Menu</span>
-        </paper-toolbar>
+  <div class="tabHeaderContainer">
+    <h1 class="tabHeader">
+      <li class="tabContainer">
+        <a class="tab" target="_blank" href="http://loggerlife.blogspot.com" title="go to blog">
+          Blog
+        </a>
+      </li>
+      <li class="tabContainer">
+        <a class="tab tab-current">Home</a>
+      </li>
+      <li class="tabContainer">
+        <a class="tab">Contact</a>
+      </li>
+    </h1>
+    <div class="tabIndicatorStrip">
+    </div>
+  </div>
 
-        <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-          <a data-route="home" href="/">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </a>
-
-          <a data-route="users" href="/users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
-
-          <a data-route="contact" href="/contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-        </paper-menu>
-      </paper-scroll-header-panel>
-
-      <!-- Main Area -->
-      <paper-scroll-header-panel main condenses keep-condensed-header>
-
-        <!-- Main Content -->
-        <div class="content">
-	        <!-- Main Toolbar -->
-	        <paper-toolbar id="mainToolbar" class="tall">
-	          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
-		  		</paper-icon-button>
-	          <span class="flex"></span>
-			  
-			  <!-- Toolbar icons -->
-			  <paper-icon-button icon="refresh" ></paper-icon-button>
-			  <paper-icon-button icon="search">
-		  		</paper-icon-button>
+  <div class="splashContainer" >
+    <h1>Fast, flexible logging</h1>
+    <a href="https://play.google.com/store/apps/details?id=com.waterbear.taglog">
+      <img alt="Get it on Google Play"
+           src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+    </a>
+  </div>
 
 
-	          <!-- Application name -->
-	          <div class="middle middle-container center horizontal layout">
-	            <div class="app-name">Tap Log</div>
-	          </div>
 
-			  <!-- Application sub title -->
-			  <div class="bottom bottom-container center horizontal layout">
-				  <div class="bottom-title paper-font-subhead">Log Anything</div>
-				  
-			  </div>
-			  <paper-button raised class="bottom bottom-container center horizontal" id="actionButton">
-			  try it</paper-button>
-			  
+  <!-- Main Content -->
+  <div class="content">
 
-	        </paper-toolbar>
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+    <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-            <section data-route="home">
-              <paper-material elevation="1">
-			  
-                <my-greeting></my-greeting>
-
-                <p class="paper-font-subhead">You now have:</p>
-                <my-list></my-list>
-
-                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
-              </paper-material>
-              <paper-material elevation="1">
-                <p class="paper-font-body2">This is another card.</p>
-              </paper-material>
-            </section>
-
-            <section data-route="users">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a>
-              </paper-material>
-            </section>
-
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">
-                User:<span>{{params.name}}</span>
-                </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
-              </paper-material>
-            </section>
-
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
-
-          </iron-pages>
+      <section data-route="home">
+        <div id=promoContentBlock>
+          <h2 id="promoText">
+            1. Create a button<br>
+            2. Tap to log<br>
+            3. Review your data<br>
+          </h2>
+          <br/>
+          <img id="heroImage" src="images/ScreenshotHome_framed_reduced.png"></img>
         </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
+        <div id="featureStrip">
+          <div id="featureContainer">
+            <li class="feature">
+              <div>
+                <img class="featureIcon" src="art/ic_format_textdirection_l_to_r_48px.svg"></img>
+              </div>
+              <i>Quantities</i>
+            </li>
+            <li class="feature">
+              <div>
+                <img class="featureIcon" src="art/ic_gps_fixed_48px.svg"></img>
+              </div>
+              <i>Gps</i>
+            </li>
+            <li class="feature">
+              <div>
+                <img class="featureIcon" src="art/ic_folder_open_48px.svg"></img>
+              </div>
+              <i>Folders</i>
+            </li>
+            <li class="feature">
+              <div>
+                <img class="featureIcon" src="art/ic_trending_up_48px.svg"></img>
+              </div>
+              <i>Widgets</i>
+            </li>
+            <li class="feature">
+              <div>
+                <img class="featureIcon" src="art/ic_multitrack_audio_48px.svg"></img>
+              </div>
+              <i>Text Notes</i>
+            </li>
+          </div>
+        </div>
 
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
+        <div id="reviewContainer">
+          <h2>"Simple and effective"</h2>
+          <br/>
+          <i>- Review from Google Play</i>
+        </div>
+        <div class="deviceImageStaticContainer">
 
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-                         precache-file="precache.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    -->
+          <img class="deviceImageStatic" src="images/ScreenshotList_framed_reduced.png"></img>
+          <img class="deviceImageStatic" src="images/ScreenshotChart5_framed_reduced.png"></img>
+          <br/>
+          <i>Copyright ©2015 Tap Log</i>
+        </div>
 
-  </template>
 
-  <!-- build:js scripts/app.js -->
-  <script src="scripts/app.js"></script>
-  <!-- endbuild-->
+      </section>
+
+      <section data-route="users">
+        <paper-material elevation="1">
+          <h2 class="paper-font-display2">Users</h2>
+          <p>This is the users section</p>
+          <a href="/users/Rob">Rob</a>
+        </paper-material>
+      </section>
+
+      <section data-route="user-info">
+        <paper-material elevation="1">
+          <h2 class="paper-font-display2">
+            User:<span>{{params.name}}</span>
+          </h2>
+          <div>This is <span>{{params.name}}</span>'s section</div>
+        </paper-material>
+      </section>
+
+      <section data-route="contact">
+        <paper-material elevation="1">
+          <h2 class="paper-font-display2">Contact</h2>
+          <p>This is the contact section</p>
+        </paper-material>
+      </section>
+
+    </iron-pages>
+    </div>
+
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
 </body>
 
 </html>

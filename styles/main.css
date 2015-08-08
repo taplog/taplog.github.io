@@ -7,8 +7,13 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+@import url(http://fonts.googleapis.com/css?family=Roboto:100italic,300italic&subset=latin,latin-ext);
 body {
   background: #fafafa;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto-LightItalic','Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100; !important;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   color: #333;
 }

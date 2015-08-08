@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --default-primary-color: #3F51B5; /* indigo 500 */
     --light-primary-color: #C5CAE9; /* indigo 100 */
     --text-primary-color: #ffffff; /*text/icons*/
-    --accent-color: #ffaa80; /* reda100 (alternative: light green a100) */
+    --accent-color: #FFCDD2; /* reda100 FFCDD2 (alternative: light green a100) */
     --primary-background-color: #c5cae9; /* indigo 100 */
     --primary-text-color: #212121;
     --secondary-text-color: #727272;
@@ -36,20 +36,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* Components */
 
     /* paper-drawer-panel */
-    --drawer-menu-color: #ffffff;
+    --drawer-menu-color: #fafafa;
     --drawer-border-color: 1px solid #ccc;
     --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
 
     /* paper-menu */
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
+
+    --title-color: rgba(0,0,0,0.80);
+    --tab-strip-color: #4D4D4D;
+    --tab-indicator-color: #fafafa;
+
+    --grid-width: 11%;
+    --grid-gutter: 1%;
+    --grid-margin-left: calc(var(--grid-width) + var(--grid-gutter));
+
+    --feature-highlight-color: #FFCDD2;
   }
 
   /* General styles */
   #drawerToolbar {
     color: var(--secondary-text-color);
     background-color: var(--drawer-menu-color);
-    border-bottom: var(--drawer-toolbar-border-color);
+
   }
 
   paper-scroll-header-panel {
@@ -70,15 +80,181 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     opacity: 0.54;
   }
 
-  #actionButton {
-	  background: var(--accent-color);
-	  color: white;
-	  z-index: 1;
-	  font-size: 14px;
-	  position:absolute;
-	  right:5%;
-	  bottom:10px;
+  #mainTitle {
+    color: var(--title-color);
+    font-size: 28px;
+    line-height: 32px;
+    margin-left: 16px;
+    font-style: normal;
   }
+
+  #actionButton {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  background: var(--accent-color);
+    font-style: normal;
+    font-weight: 900;
+	  color: white;
+	  z-index: 10;
+	  font-size: 12px;
+    min-width: 140px;
+
+  }
+  .tabHeader {
+    color: var(--tab-strip-color);
+    background: var(--tab-strip-color);
+    padding-left: var(--grid-margin-left);
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .tabIndicatorStrip {
+    min-height: 2px;
+    color: var(--tap-indicator-color);
+    background: var(--tap-indicator-color);
+  }
+
+ .tabContainer {
+   display: inline;
+   min-width: 80px;
+ }
+
+  a.tab {
+    color: var(--text-primary-color);
+    min-width: 96px;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 1.5em;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    display: inline-block; /* container clickable */
+    text-decoration: none; /* remove link underline */
+    position: relative; /* position children relatively */
+  }
+  a.tab:hover {
+    color: var(--accent-color);
+  }
+  .tabContainer .tab::after {
+      left: 5%;
+  }
+  .tab-current::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--tap-indicator-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    display: block;
+}
+
+.splashContainer {
+  position: relative;
+  background-color: var(--default-primary-color);
+  background-image:  url("../images/Cutout_Stencil_splash.svg");
+  background-repeat: no-repeat;
+  min-height: 330px;
+}
+
+.splashContainer > h1 {
+  color: var(--text-primary-color);
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.5em;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: var(--grid-margin-left);
+}
+.splashContainer > a {
+  margin-left: 66.6%;
+  -webkit-filter: drop-shadow(0px 10px 17px #222);
+  filter:         drop-shadow(0px 10px 17px #222);
+}
+
+/*allows us to position device image over promo header*/
+section {
+  position: relative;
+}
+
+#promoContentBlock {
+  min-height: 534px;
+  position: relative;
+}
+
+#heroImage {
+  width: calc(3.80*var(--grid-width));
+  max-width: 500px;
+  min-width: 320px;
+  /* ScreenshotHome_framed: */
+  -webkit-filter: drop-shadow(0px 10px 9px #222);
+  filter:         drop-shadow(0px 10px 9px #222);
+  position: absolute;
+  /*top: calc(-3.5*var(--grid-width));
+  */
+  top: -100px;
+  transform: translateY(-8%);
+  left: calc(0.5*var(--grid-width));
+}
+#promoText {
+  margin-top: 100px;
+  position: absolute;
+  left: 55%;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin: 0px;
+}
+
+#featureStrip {
+  background-color: var(--feature-highlight-color);
+  padding-left: 44.4%;
+  text-align: center;
+}
+
+#featureContainer {
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+li.feature {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 120px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+}
+img.featureIcon {
+  width: 48px;
+  height: 48px;
+}
+
+i {
+  font-weight: 100;
+  font-size: 22px;
+  color: var(--primary-text-color);
+}
+
+.deviceImageStaticContainer {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.deviceImageStatic {
+  width: 40%;
+}
+
+#reviewContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+}
 
   .paper-menu > .iron-selected {
     color: var(--default-primary-color);
@@ -104,40 +280,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     line-height: 24px;
     min-height: 48px;
     padding: 0 16px;
-  }
-
-  paper-toolbar.tall .app-name {
-    font-size: 40px;
-    font-weight: 300;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-  
-  paper-toolbar.tall {
-	  /*height: 256px;*/
-	--paper-toolbar-background: url("images/Feature_graphic_blue3.png");
-
-    --paper-toolbar: {
-      font-size: 40px; /* Change default font size */
-    }; /* Notice the semicolon here */
-  }  
-
-  #mainToolbar .middle-container  {
-    height: 100%;
-    margin-left: 48px;
-  }
-
-  #mainToolbar:not(.tall) .middle {
-    font-size: 18px;
-    padding-bottom: 0;
-  }
-
-  #mainToolbar .bottom {
-    margin-left: 48px;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
   }
 
   /* Height of the scroll area */
@@ -180,6 +322,97 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   }
 
+
+  /* narrow */
+  @media (max-width: 700px) {
+    /**
+    1. center google play link
+    2. left align promo text
+    3. de-transpose hero image
+    **/
+
+    .splashContainer {
+      text-align: center;
+      overflow: visible;
+      display: inline-block;
+      width: 100%;
+      min-height: inherit;
+      position: relative;
+      padding-bottom: 32px;
+    }
+    .splashContainer > a {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .splashContainer > h1 {
+      padding-left: 0;
+    }
+
+    #heroImage {
+      width: 320px;
+      max-width: initial;
+      min-width: initial;
+      position: initial;
+      top: initial;
+      transform: initial;
+      left: initial;
+    }
+    #promoContentBlock {
+      min-height: initial;
+      overflow: visible;
+      position: relative;
+      text-align: center;
+      display: block;
+    }
+    #promoText {
+      margin-top: 32px;
+      position: relative;
+      left: initial;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .deviceImageStaticContainer {
+      display: block;
+      text-align: center;
+    }
+
+    .deviceImageStatic {
+      width: 85%;
+    }
+
+    #reviewContainer {
+      margin-bottom: 32px;
+    }
+
+    .splashContainer > h1 {
+      padding-left: initial;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
+  }
+
+  /* Small */
+  @media (max-width: 900px) {
+    #promoText {
+      font-size: 36px;
+    }
+    #promoContentBlock {
+      min-height: 434px;
+    }
+  }
+
+  @media (max-width: 1020px) {
+
+    #featureStrip {
+      padding-left: 0%;
+    }
+
+  }
+
+
+
   /* Tablet+ */
   @media (min-width: 601px) {
 
@@ -195,7 +428,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     iron-pages {
-      padding: 48px 62px;
+      padding: 0px 0px;
     }
 
   }
