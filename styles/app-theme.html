@@ -59,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   #drawerToolbar {
     color: var(--secondary-text-color);
     background-color: var(--drawer-menu-color);
-
+    min-height: 64px;  /** safari scrunches view unless we do this **/
   }
 
   paper-scroll-header-panel {
@@ -99,24 +99,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     min-width: 140px;
 
   }
+
+  .tabHeaderContainer {
+    min-height: 90px;/** safari scrunches view unless we do this **/
+    background: var(--tab-strip-color);
+    position: relative;
+  }
+
   .tabHeader {
     color: var(--tab-strip-color);
-    background: var(--tab-strip-color);
     padding-left: var(--grid-margin-left);
     margin-top: 0px;
     margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
   }
 
   .tabIndicatorStrip {
     min-height: 2px;
-    color: var(--tap-indicator-color);
-    background: var(--tap-indicator-color);
+    color: var(--tab-indicator-color);
+    background: var(--tab-indicator-color);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
   }
 
- .tabContainer {
-   display: inline;
-   min-width: 80px;
- }
+  .tabContainer {
+    display: inline-block;
+    min-width: 80px;
+  }
 
   a.tab {
     color: var(--text-primary-color);
@@ -338,7 +349,7 @@ i {
       width: 100%;
       min-height: inherit;
       position: relative;
-      padding-bottom: 32px;
+      padding-bottom: 56px;
     }
     .splashContainer > a {
       margin-left: 0;
@@ -346,6 +357,7 @@ i {
     }
     .splashContainer > h1 {
       padding-left: 0;
+      font-size: 42px;
     }
 
     #heroImage {
