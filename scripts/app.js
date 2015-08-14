@@ -23,6 +23,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+    // get a reference to the A element
+    var home = document.getElementById("tabHome");
+    var contact = document.getElementById("tabContact");
+    // attach event
+    home.onclick = function(e) { return setHomeTab(e); };
+    contact.onclick = function(e) { return setContactTab(e); };
+
+    function setContactTab(e) {
+        contact.className="tab tab-current";
+        home.className="tab";
+        // prevent execution of the a href
+        return true;
+    }
+    function setHomeTab(e) {
+        home.className="tab tab-current";
+        contact.className="tab";
+        return true;
+    }
+
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -54,5 +73,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Scale middleContainer appName
     Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
   });
+
+
+
 
 })(document);
