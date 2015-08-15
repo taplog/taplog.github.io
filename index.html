@@ -61,15 +61,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Drawer Toolbar -->
   <paper-toolbar id="drawerToolbar">
     <span class="title" id="mainTitle">Tap Log</span>
+    <a href="http://market.android.com/details?id=com.waterbear.taglog">
     <paper-button raised center id="actionButton">
       free to use
     </paper-button>
+    </a>
   </paper-toolbar>
 
   <div class="tabHeaderContainer">
     <h1 class="tabHeader">
       <li class="tabContainer">
-        <a class="tab" target="_blank" href="http://loggerlife.blogspot.com" title="go to blog">
+        <a class="tab" href="http://loggerlife.blogspot.com" title="go to blog">
           Blog
         </a>
       </li>
@@ -91,8 +93,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
     </a>
   </div>
-
-
 
   <!-- Main Content -->
   <div class="content">
@@ -150,14 +150,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <i>- Review from Google Play</i>
         </div>
         <div class="deviceImageStaticContainer">
-
           <img class="deviceImageStatic" src="images/ScreenshotList_framed_reduced.png"></img>
           <img class="deviceImageStatic" src="images/ScreenshotChart6_framed_reduced.png"></img>
           <br/>
           <i>Copyright ©2015 Tap Log</i>
         </div>
-
-
       </section>
 
       <section data-route="users">
@@ -180,8 +177,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <section data-route="contact">
         <paper-material elevation="1">
           <h2 class="paper-font-display2">Contact</h2>
-          <p>This is the contact section</p>
+          <!--<p>This is the contact section</p>-->
+          <br/>
+          <a href="https://twitter.com/intent/tweet?screen_name=taplogger" class="twitter-mention-button contact-item" data-size="large" data-related="taplogger">Tweet to @taplogger</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+          <br/>
+          <i2 class="contact-item">e-mail: </i2><a class="contact-item" href="mailto://support@taplog.io">support@taplog.io</a>
+
         </paper-material>
+
+        <paper-material elevation="1">
+          <h2 class="paper-font-display2">Community</h2>
+          <br/>
+          <a href="https://twitter.com/taplogger" class="twitter-follow-button contact-item" data-show-count="false" data-size="large">Follow @taplogger</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <br/>
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-page contact-item" data-href="https://www.facebook.com/TapLog" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/TapLog"><a href="https://www.facebook.com/TapLog">Tap Log</a></blockquote></div></div>
+          <br/>
+
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <g:community class="contact-item" layout="landscape" width="340" data-showtagline="true" href="https://plus.google.com/communities/101261148600019079776"></g:community>
+
+          <br/>
+
+
+        </paper-material>
+
+
+
+
       </section>
 
     </iron-pages>
